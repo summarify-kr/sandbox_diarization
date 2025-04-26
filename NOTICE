@@ -15,6 +15,10 @@ This project makes use of the following libraries.
 - https://github.com/pytorch/audio
 - 2.6.0
 
+4. pydub
+- MIT License
+- https://github.com/jiaaro/pydub
+- 0.25.1
 
 ===== 2. torch =====
 From PyTorch:
