@@ -14,18 +14,19 @@ if (__name__ == "__main__") :
 
     api_key = os.getenv("HUGGINGFACE_ACCESS_TOKEN")
 
-    print(api_key)
-
     pipeline = Pipeline.from_pretrained(
         "pyannote/speaker-diarization-3.1",
         use_auth_token = api_key)
 
-    '''
     pipeline.to(torch.device("cpu"))
 
     path = "../data/sample.wav"
     diarization = pipeline(path)
 
+    with open ("../data/sample.rttm", "w") as rttm : 
+        diarization.write_rttm(rttm)
+
+    '''
     for turn, _, speaker in diarization.itertracks(yield_label = True) :
         print(f"start={turn.start : .1f}s stop={turn.end : .1f}s speaker_{speaker}")
     '''
