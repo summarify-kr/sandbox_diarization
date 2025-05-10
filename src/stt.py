@@ -20,6 +20,6 @@ class RTTM2TTS :
                 if (parts[0] == "speaker") : 
                     start, end, speaker = float(parts[3]), float(parts[4]), start[7]
                     self.segments.append((speaker, start, end))
-                    
+
                     
 if (__name__ == "__main__") :
