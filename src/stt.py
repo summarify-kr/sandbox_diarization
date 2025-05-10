@@ -20,6 +20,28 @@ class RTTM2TTS :
                 if (parts[0] == "speaker") : 
                     start, end, speaker = float(parts[3]), float(parts[4]), start[7]
                     self.segments.append((speaker, start, end))
+<<<<<<< HEAD
 
+=======
+                    
+    def split_audio (self) : 
+        
+        audio = AudioSegment.from_wav(self.audio_path)
+
+        for idx, (start, end, speaker) in enumerate (self.segments) :
+            segment_audio = audio[start : end]
+            
+            self.stt(segment_audio)
+        
+        
+    def stt (self, segment_audio) : 
+
+    
+    def main (self) : 
+        self.load_rttm()
+        self.split_audio()
+        
+                    
+>>>>>>> abf8670bbd8960e59a371f3c82e7cefa45b850fe
                     
 if (__name__ == "__main__") :
