@@ -4,12 +4,17 @@ import os
 
 class RTTM2TTS : 
     
-    def __init__ (self, rttm_path, audio_path, output_path) : 
+    def __init__ (self, rttm_path, audio_path, output_path, model = None) : 
         self.rttm_path = rttm_path
         self.audio_path = audio_path
         self.output_path = output_path
 
         self.segments = []
+
+        self.model = model
+
+    def _set_model (self, model) :
+        self.model = model
 
     def read_rttm (self) : 
 
@@ -34,6 +39,7 @@ class RTTM2TTS :
         
     def stt (self, segment_audio) : 
 
+        
     
     def main (self) : 
         self.load_rttm()
